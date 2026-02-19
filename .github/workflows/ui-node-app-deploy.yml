@@ -5,9 +5,11 @@ on:
 
 jobs:
   deploy:
-    uses: Akki-8989/Infrastructure/.github/workflows/deploy-frontend.yml@main
+    uses: Akki-8989/Infrastructure/.github/workflows/deploy-backend.yml@main
     with:
       repo_name: ui-node-app
       infra_repo: Infrastructure
-      backend_urls: https://be-node-products-webapp.azurewebsites.net,https://be-node-orders-webapp.azurewebsites.net
+      database_type: sqlserver
+      database_name: ecom_db
+      tier: free
     secrets: inherit
